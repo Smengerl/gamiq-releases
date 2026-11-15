@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Beta 3.0.0-beta.20</title>
+<title>Release notes v3.0.1</title>
 <style>
 :root {
   --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
@@ -81,27 +81,33 @@ body{margin:0;background:var(--bg)}
 <body>
 <div class="pg"><div class="in">
 <div class="bub">
-<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>3.0.0-beta.20</b><span class="chip">BETA</span></div>
-<div class="meta">Built from main · 13 commits since v3.0.0. A test build for units with engineering mode on. It is not an official release; the official release 3.0.0 replaces it.</div>
+<div class="ttl"><a class="back" href="../index.html" aria-label="All versions">‹</a><b>v3.0.1</b><span class="n">2026-11-15</span></div>
+<div class="meta">Prepares the units of v3.0 for several systems on one WiFi, which v3.1 will bring, and finishes the result line of the dev commands. Nothing changes in how the clock is operated. Works with units of the same MAJOR version; update every unit of <code>v3.0.0</code> to this version before a unit of v3.1 joins the same WiFi.</div>
 </div>
 <div class="sec">
-<div class="sh"><b>Changes since v3.0.0</b><span class="n">13</span></div>
-<div class="tl">
-<div class="c"><span class="ty">commit</span><span class="tx">Test rig: a unit that keeps sending or applying states counts as Master or Slave even if its life line was lost (#245)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">add placeholders for the printed parts of hardware 2.0</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">a decoded state carries no units, an empty colour is not sent (#68)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">the Master's state names the colours of its units (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">a dev command the unit answers with 400 keeps its result, a blob without a host is refused (#186)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">the names v3.1 will use are reserved, a full Master echoes no fifth unit (#68)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">remove the open points from the bill of materials</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">a Master of another system is no partner in mDNS, a state with an unknown mode keeps the Master heard (#68)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">wire letters and terminal types in the wiring diagram of the bill of materials</span></div>
-<div class="c"><span class="ty">test</span><span class="tx">the auto update scenarios offer a version of this MAJOR (3.99.0) since the build is v3</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">what the trace logs say about A1, A3 and C2 of the v3 soak (#238)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">a dev command needs an id and its eng line is its end, with busy and failed (#186)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">v3 on two units, the gate table of #217 and the KPIs against v2.3.0 (#217, #220)</span></div>
+<div class="sh"><svg class="sic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>Fixes and changes</b><span class="n">6</span></div>
+<div class="list"><div class="it">A Master of another system is no longer taken for a Master of the own one when it is found by mDNS: a unit neither joins it nor yields its role to it.<br><span class="ref">#68</span></div>
+<div class="it">A state with a game mode this version does not know keeps the Master heard instead of being dropped, so a Slave no longer becomes a second Master when a later version adds a mode.<br><span class="ref">#68</span></div>
+<div class="it">The contract of the unit link says what a receiver does with what it does not know, fixes the format of the system id and reserves the names v3.1 will use.<br><span class="ref">#68</span></div>
+<div class="it">For people who build: every dev command needs an <code>id</code>, and its <code>eng</code> trace line is the end of the command with <code>ok</code>, <code>refused</code>, <code>busy</code> or <code>failed</code>: after the upload for a snapshot and a crash dump, after the trial of the new image for an image. The bench waits for that line. <b>Breaks the engineering route of <code>v3.0.0</code></b>: a command without an <code>id</code> is answered with <code>400</code>.<br><span class="ref">#186</span></div>
+<div class="it">The state the Master sends carries the colours of the units of the system (<code>units</code>), so a phone can show them as colour dots.<br><span class="ref">#68</span></div>
+<div class="it">For people who build: the test rig no longer counts a unit as off or absent when a trace line is lost; the trace is UDP.<br><span class="ref">#238</span><span class="ref">#245</span></div>
 </div>
 </div>
+
+<div class="sec">
+<div class="sh"><svg class="sic warn" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17.2v.1"/></svg><b>Known limits</b><span class="n">2</span></div>
+<div class="list"><div class="it">In the real soak of <code>v3.0.0</code> the Master's WiFi traffic was held up at times for 14 minutes (commands to the Slave up to 3.5 s late, no role change); the cause is open.<br><span class="ref">#238</span></div>
+<div class="it">Several systems on one WiFi are not part of this version: every unit is in the default system (#68, planned for v3.1).</div>
+</div>
+</div>
+
+<div class="sec">
+<div class="sh"><svg class="sic ok" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><b>Hardware verification</b><span class="n">3</span></div>
+<div class="hw">Two units (cb5cb0, cb5cb4), commit <code>ae4326e</code> (firmware identical to the candidate):</div><div class="hw"><b>S4 hardware suite:</b> 17 passed, phone stress ok. Earlier runs on the same firmware failed one or two tests each, with different tests every time; the power cut test failed because a lost trace line hid a returning Slave (#245, fixed in the rig, 12 of 12 green afterwards). The other failures (cold boot pair, six phones 566 ms, phone goes away, command storm) did not repeat and are not explained; <code>v3.0.0</code> passed the same suite 17 of 17 on the same night.</div><div class="hw"><b>S5 soak:</b> A1 99.5 %, A3 at most 7.5 s, C2 p99 108 ms. The bench WiFi was worse than on 13 November (13 % of the states lost at the Mac).</div><div class="hw"><b>S6 (panels and QR by eye):</b> not run, the display is unchanged.</div>
+</div>
+
+<div class="nav"><a href="../3.0.0/notes.html">‹ v3.0.0</a><span></span></div>
 </div></div>
 </body>
 </html>

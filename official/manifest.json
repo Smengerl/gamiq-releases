@@ -1,16 +1,16 @@
 {
  "format": 1,
  "channel": "official",
- "version": "3.0.0",
- "summary": "The units talk to each other over one UDP link instead of an MQTT broker",
+ "version": "3.0.1",
+ "summary": "Prepares the units of v3.0 for several systems on one WiFi, which v3.1 will bring, and finishes",
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/shotclock-releases/official/3.0.0/shotclock-mps3-64-3.0.0.bin",
-   "size": 1670464,
-   "sha256": "f929bd681f711fb014a22941f876965c76ab9b8e6a21ec67b67e6e75a0cda18a",
+   "url": "https://smengerl.github.io/shotclock-releases/official/3.0.1/shotclock-mps3-64-3.0.1.bin",
+   "size": 1671344,
+   "sha256": "18129e43e9d6272f072a7ce64446d159f0c929b3532958403dba10567f4d64b9",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/shotclock-releases/official/3.0.0/notes.html"
+ "notes_url": "https://smengerl.github.io/shotclock-releases/official/3.0.1/notes.html"
 }
