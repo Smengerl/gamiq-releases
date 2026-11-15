@@ -1,16 +1,16 @@
 {
  "format": 1,
  "channel": "official",
- "version": "3.0.1",
- "summary": "Prepares the units of v3.0 for several systems on one WiFi, which v3.1 will bring, and finishes",
+ "version": "3.1.0",
+ "summary": "Several games on one WiFi, for example two courts in a hall: each game has its own name, its",
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/shotclock-releases/official/3.0.1/shotclock-mps3-64-3.0.1.bin",
-   "size": 1671344,
-   "sha256": "18129e43e9d6272f072a7ce64446d159f0c929b3532958403dba10567f4d64b9",
+   "url": "https://smengerl.github.io/shotclock-releases/official/3.1.0/shotclock-mps3-64-3.1.0.bin",
+   "size": 1690832,
+   "sha256": "446649c1779fe4722116e2c2dc05e5622367481bc1cb17ba167f3cba252d9dcd",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/shotclock-releases/official/3.0.1/notes.html"
+ "notes_url": "https://smengerl.github.io/shotclock-releases/official/3.1.0/notes.html"
 }
