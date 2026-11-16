@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Beta 3.2.0-beta.30</title>
+<title>Beta 3.2.0-beta.6</title>
 <style>
 :root {
   --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
@@ -81,31 +81,16 @@ body{margin:0;background:var(--bg)}
 <body>
 <div class="pg"><div class="in">
 <div class="bub">
-<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>3.2.0-beta.30</b><span class="chip">BETA</span></div>
-<div class="meta">Built from main · 19 commits since v3.0.1. A test build for units with engineering mode on. It is not an official release; the official release 3.2.0 replaces it.</div>
+<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>3.2.0-beta.6</b><span class="chip">BETA</span></div>
+<div class="meta">Built from main · 4 commits since v3.1.0. A test build for units with engineering mode on. It is not an official release; the official release 3.2.0 replaces it.</div>
 </div>
 <div class="sec">
-<div class="sh"><b>Changes since v3.0.1</b><span class="n">19</span></div>
+<div class="sh"><b>Changes since v3.1.0</b><span class="n">4</span></div>
 <div class="tl">
-<div class="c"><span class="ty">release</span><span class="tx">notes of v3.1.0, NEXT_VERSION 3.2.0 (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">header gaps: 8 px between the Spiele button and the name and between the two buttons on the right (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">a tap on a unit row of the Spiele popup shows no highlight, as the cards of the Einstellungen (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">the icons of the rename buttons are centred, the game's name sits closer to its button (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">the arrow of a unit in the Spiele popup has the margin of the Einstellungen' arrow, the Master tag without an arrow keeps the card margin (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">guide texts of the Spiele chapter (the game being operated, assigning to games running at the same time, no assigning during a game); no offline banner behind or after the guide (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">one popup at a time, a tap in the header closes it, the unit rows of the Spiele popup look like the cards of the Einstellungen (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">UI test 2: an arrow on the units that open, the rename pen in the game card of the popup (out of the header), game names are unique (409 name, also for a new game); the guide follows (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">findings of the UI test: room between dot and signal, renaming no longer reads as a lost link, the move list inside the unit as buttons without dots, no heading for this game, a unit that left is gone from its old game at once (move: left) (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">the v3 review: configs run once by their last four ids, pending until the unit stays or leaves, meta.join instead of the version, no lost relay message, a lone Master's join holds commands and restarts with its role, foreign traffic skipped unparsed, an over-long sys is none; the popups say why a move failed, keep names to 20 bytes and do not re-draw under a finger (#68)</span></div>
-<div class="c"><span class="ty">test</span><span class="tx">the guide check knows the fourth chapter, Mehrere Spiele (#68)</span></div>
-<div class="c"><span class="ty">test</span><span class="tx">a full game takes no fifth unit (P24g); more than two units are tested on virtual units only (#68)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">the deviation left for systems, hardware row H19, NEXT_VERSION 3.1.0 (#68)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">a Master alone may join another system: stored for the next start, it restarts as that system's Slave (#68)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">the discovery hands other systems to a callback, no include cycle with link_master (#68)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">a unit that opens a new system echoes its config in the old one; a revoked phone that renames the game sees the pairing page (#68)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">the Spiele popup, the game's name in the header and the guide's chapter Mehrere Spiele (#68)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">several systems on one WiFi in the firmware: name, list, trial, opening, REST (#68)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">a unit reads its system from NVS; the contracts of several systems on one WiFi (#68)</span></div>
+<div class="c"><span class="ty">refactor</span><span class="tx">neutral platform names, clock_* becomes unit_* (#243 Q2)</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">v4 design - layer folders of a game type in the include rule, report budget open (#243 Q1)</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">v4 design - review findings: touched next to held, layer folders of a game type, open report budget and REST key (#243 Q1)</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">v4 design - platform and game types, game types and roles, wire v4 draft (#243 Q1)</span></div>
 </div>
 </div>
 </div></div>
