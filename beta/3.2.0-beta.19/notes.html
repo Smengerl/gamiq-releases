@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Beta 3.2.0-beta.11</title>
+<title>Beta 3.2.0-beta.19</title>
 <style>
 :root {
   --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
@@ -81,12 +81,18 @@ body{margin:0;background:var(--bg)}
 <body>
 <div class="pg"><div class="in">
 <div class="bub">
-<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>3.2.0-beta.11</b><span class="chip">BETA</span></div>
-<div class="meta">Built from main · 7 commits since v3.1.0. A test build for units with engineering mode on. It is not an official release; the official release 3.2.0 replaces it.</div>
+<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>3.2.0-beta.19</b><span class="chip">BETA</span></div>
+<div class="meta">Built from main · 13 commits since v3.1.0. A test build for units with engineering mode on. It is not an official release; the official release 3.2.0 replaces it.</div>
 </div>
 <div class="sec">
-<div class="sh"><b>Changes since v3.1.0</b><span class="n">7</span></div>
+<div class="sh"><b>Changes since v3.1.0</b><span class="n">13</span></div>
 <div class="tl">
+<div class="c"><span class="ty">docs</span><span class="tx">v4 design - leave of a game screen draws nothing and takes no lock (#243 Q4)</span></div>
+<div class="c"><span class="ty">refactor</span><span class="tx">game screen contract names who holds the panel lock, review findings (#243 Q4)</span></div>
+<div class="c"><span class="ty">refactor</span><span class="tx">a game type's screen may draw, standby is the platform's (#243 Q4)</span></div>
+<div class="c"><span class="ty">refactor</span><span class="tx">the game screen belongs to the game type, panel_view keeps the panel (#243 Q4)</span></div>
+<div class="c"><span class="ty">refactor</span><span class="tx">the platform runs the game through its game type (#243 Q4)</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">v4 design - the unit's part in the game is its job, the report budget is guarded by a test (#243)</span></div>
 <div class="c"><span class="ty">refactor</span><span class="tx">the shot clock behind the game type in its own module, no include cycle (#243 Q3)</span></div>
 <div class="c"><span class="ty">refactor</span><span class="tx">GameWire without padding bytes, two refusals of the game codec tested (#243 Q3)</span></div>
 <div class="c"><span class="ty">refactor</span><span class="tx">the game becomes opaque to the unit link (#243 Q3)</span></div>
