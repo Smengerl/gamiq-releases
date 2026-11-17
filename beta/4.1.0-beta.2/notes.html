@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Beta 4.1.0-beta.52</title>
+<title>Beta 4.1.0-beta.2</title>
 <style>
 :root {
   --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
@@ -81,47 +81,13 @@ body{margin:0;background:var(--bg)}
 <body>
 <div class="pg"><div class="in">
 <div class="bub">
-<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>4.1.0-beta.52</b><span class="chip">BETA</span></div>
-<div class="meta">Built from main · 35 commits since v3.1.0. A test build for units with engineering mode on. It is not an official release; the official release 4.1.0 replaces it.</div>
+<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>4.1.0-beta.2</b><span class="chip">BETA</span></div>
+<div class="meta">Built from main · 1 commit since v4.0.0. A test build for units with engineering mode on. It is not an official release; the official release 4.1.0 replaces it.</div>
 </div>
 <div class="sec">
-<div class="sh"><b>Changes since v3.1.0</b><span class="n">35</span></div>
+<div class="sh"><b>Changes since v4.0.0</b><span class="n">1</span></div>
 <div class="tl">
-<div class="c"><span class="ty">docs</span><span class="tx">release notes of v4.0.0, NEXT_VERSION 4.1.0</span></div>
-<div class="c"><span class="ty">Guide</span><span class="tx">the game chapter and demo states come from the game type (#243)</span></div>
-<div class="c"><span class="ty">commit</span><span class="tx">REST app through the one encoder; budget test with a full app (#243)</span></div>
-<div class="c"><span class="ty">Link</span><span class="tx">GamePresence instead of two flags (#243)</span></div>
-<div class="c"><span class="ty">commit</span><span class="tx">Guide demo states are never standby: drop the dead branch (#243)</span></div>
-<div class="c"><span class="ty">test</span><span class="tx">the power-cut test skips the rig's STANDBY entry when it looks for the time running out (#243)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">the key app of a state is checked without the deprecated containsKey (#243 Q7)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">the test game type's encode_rest returns its length (#243 Q7)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">review findings of the v4 wire step (#243 Q7)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">five units per system (E8 of #243)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">system tests, the guide check and review findings of the wire step (#243 Q7)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">wire and REST v4, standby is the platform's (#243 Q7)</span></div>
-<div class="c"><span class="ty">feat</span><span class="tx">basketball's commands and shot clock states named after the game's events (#243 Q7)</span></div>
-<div class="c"><span class="ty">test</span><span class="tx">review findings of the test game type (#243 Q6)</span></div>
-<div class="c"><span class="ty">test</span><span class="tx">the platform plays a test game type in the harness (#243 Q6, D6)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">the page fails to build without its game, review findings of Q5 (#243 Q5)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">the page's shell in frontend/platform/, basketball's part in frontend/games/ (#243 Q5)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">the layer and cycle rules see every spelling of a firmware include (#243 Q4)</span></div>
-<div class="c"><span class="ty fix">fix</span><span class="tx">release gate reads version.h from the platform, review findings of Q4b (#243 Q4)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">firmware/platform/ and firmware/games/basketball/, the include rule (#243 Q4, E6)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">the game types of an image are a registry (#243 Q4, D2)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">the panel lock is the platform's, the blink task and the game face are the shot clock's (#243 Q4)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">v4 design - leave of a game screen draws nothing and takes no lock (#243 Q4)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">game screen contract names who holds the panel lock, review findings (#243 Q4)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">a game type's screen may draw, standby is the platform's (#243 Q4)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">the game screen belongs to the game type, panel_view keeps the panel (#243 Q4)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">the platform runs the game through its game type (#243 Q4)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">v4 design - the unit's part in the game is its job, the report budget is guarded by a test (#243)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">the shot clock behind the game type in its own module, no include cycle (#243 Q3)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">GameWire without padding bytes, two refusals of the game codec tested (#243 Q3)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">the game becomes opaque to the unit link (#243 Q3)</span></div>
-<div class="c"><span class="ty">refactor</span><span class="tx">neutral platform names, clock_* becomes unit_* (#243 Q2)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">v4 design - layer folders of a game type in the include rule, report budget open (#243 Q1)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">v4 design - review findings: touched next to held, layer folders of a game type, open report budget and REST key (#243 Q1)</span></div>
-<div class="c"><span class="ty">docs</span><span class="tx">v4 design - platform and game types, game types and roles, wire v4 draft (#243 Q1)</span></div>
+<div class="c"><span class="ty fix">fix</span><span class="tx">the auto-update scenarios offer 4.99.0, the MAJOR of the firmware after v4.0.0</span></div>
 </div>
 </div>
 </div></div>
