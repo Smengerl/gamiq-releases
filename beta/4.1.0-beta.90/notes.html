@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Beta 4.1.0-beta.61</title>
+<title>Beta 4.1.0-beta.90</title>
 <style>
 :root {
   --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
@@ -81,12 +81,30 @@ body{margin:0;background:var(--bg)}
 <body>
 <div class="pg"><div class="in">
 <div class="bub">
-<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>4.1.0-beta.61</b><span class="chip">BETA</span></div>
-<div class="meta">Built from main · 38 commits since v4.0.0. A test build for units with engineering mode on. It is not an official release; the official release 4.1.0 replaces it.</div>
+<div class="ttl"><a class="back" href="../index.html" aria-label="Beta">‹</a><b>4.1.0-beta.90</b><span class="chip">BETA</span></div>
+<div class="meta">Built from main · 56 commits since v4.0.0. A test build for units with engineering mode on. It is not an official release; the official release 4.1.0 replaces it.</div>
 </div>
 <div class="sec">
-<div class="sh"><b>Changes since v4.0.0</b><span class="n">38</span></div>
+<div class="sh"><b>Changes since v4.0.0</b><span class="n">56</span></div>
 <div class="tl">
+<div class="c"><span class="ty fix">fix</span><span class="tx">A1/A2 exclude reset phases; recovery is A3 only (#360) (#366)</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">v4.1 soaks on the build with the fixes of #349 (150 min with one bad window, two 60 min repeats) (#365)</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">v4.1 jobs, settings, page modules and horn on the units; the find of #349 (#352)</span></div>
+<div class="c"><span class="ty fix">fix</span><span class="tx">an untouched game clock stays initial when the lengths differ between units (#349) (#351)</span></div>
+<div class="c"><span class="ty fix">fix</span><span class="tx">a Master that adopts the Slave's game starts its game clock from its own settings (#349) (#350)</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">v4.1 bench results (S4, stress, 150 min soak) (#348)</span></div>
+<div class="c"><span class="ty fix">fix</span><span class="tx">the page budget test allows for the gzip of other Node versions (CI measured 14385 B where a Mac measures 14304 B)</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">findings of the docs audit of 4.1.0: rest, link, game-and-roles, the contract page, panel, ui, README, frontend/firmware README</span></div>
+<div class="c"><span class="ty">chore</span><span class="tx">simplify what v4.1 added: no dead default game type in build_commands, no unused layout helpers, one sound hash per build</span></div>
+<div class="c"><span class="ty fix">fix</span><span class="tx">findings of the final code review of v4.0.0..main: a Slave's period lengths follow the settings, game_set cannot wrap, the horn is fetched when the game part loads first, the score faces compare by bytes, a game type with more than 16 jobs is refused at the join, newgame parses its arguments and restores the registry on failure</span></div>
+<div class="c"><span class="ty">docs</span><span class="tx">review C of v4.1: target-ui regenerated, hardware rows for the jobs and the panels, the product name and paths in the docs, the user guide for the parts (#305, #304, #298)</span></div>
+<div class="c"><span class="ty">feat</span><span class="tx">GAMiq: the logo on the splash screen, the hotspot, the host name gamiq-&lt;id&gt;.local, the page title, the texts (#298)</span></div>
+<div class="c"><span class="ty fix">fix</span><span class="tx">review B of #322: the scaffold names its job, functions and elements by the game type; the systest links every game type; the game part has its own alarm; bounds and deviations documented; CI runs every page test (#322)</span></div>
+<div class="c"><span class="ty">test</span><span class="tx">ship newgame's test finds the ship package under the pytest binary (#308)</span></div>
+<div class="c"><span class="ty">feat</span><span class="tx">ship newgame, the scaffold of a game type; the registry declares the game types, the page reads a game type's modules from its modules.json (#308)</span></div>
+<div class="c"><span class="ty">chore</span><span class="tx">layout B: one slice per game type, the platform in platform/, the tools read the folders from layout.py (#308)</span></div>
+<div class="c"><span class="ty">feat</span><span class="tx">the score goes up to 999; the two-column job shows a counter above 199 as grey -- (#250)</span></div>
+<div class="c"><span class="ty">feat</span><span class="tx">the guide's chapters: Grundlagen, one of the game type from its own texts, several games and game types (#322 findings 10, 11)</span></div>
 <div class="c"><span class="ty fix">fix</span><span class="tx">the page's modules load one at a time, a smaller horn, no indentation in the shipped page, the Spiele popup test in S0 (#304)</span></div>
 <div class="c"><span class="ty fix">fix</span><span class="tx">the keys under the game clock share the row (#304)</span></div>
 <div class="c"><span class="ty">feat</span><span class="tx">the phone page shows the parts of basketball, by width, and the Spiele popup sets game type and jobs (#304)</span></div>
