@@ -1,16 +1,16 @@
 {
  "format": 1,
  "channel": "official",
- "version": "4.0.0",
- "summary": "The firmware is split into a platform and a game type: the platform carries WiFi, the unit",
+ "version": "4.1.0",
+ "summary": "GAMiq, basketball complete: the shot clock system becomes a display system for games and",
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/shotclock-releases/official/4.0.0/shotclock-mps3-64-4.0.0.bin",
-   "size": 1694800,
-   "sha256": "ac6c4ef00663020d50559ff6ec4d008098d28011eda0f83f2b41147f65c95d5d",
+   "url": "https://smengerl.github.io/shotclock-releases/official/4.1.0/shotclock-mps3-64-4.1.0.bin",
+   "size": 1768912,
+   "sha256": "da460294bd6e302f7847e4c80d0a8734bde1c604a7b4d2fddad2227a09f3b9e8",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/shotclock-releases/official/4.0.0/notes.html"
+ "notes_url": "https://smengerl.github.io/shotclock-releases/official/4.1.0/notes.html"
 }

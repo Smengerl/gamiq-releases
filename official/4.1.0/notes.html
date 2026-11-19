@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Release notes v4.1.0</title>
+<style>
+:root {
+  --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
+  --text: #ffffff; --muted: #d0d0d0; --accent: #ff9a1a; --on-accent: #000000;
+  --danger: #ff6b6b; --ok: #7cff6b;
+  --guide: #b48cff; --on-guide: #000000;   
+  --shadow: #5c5c5c; --shadow-size: 4px;   
+  --unit: #ff4d4d;   
+  --font-ui: system-ui, sans-serif;   
+  --font-num: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --num-slant: normal;
+  --radius: 12px; --stroke: 1.5px; --label-case: none;
+  
+  --fs-12: 12px; --fs-13: 13px; --fs-14: 14px; --fs-15: 15px; --fs-16: 16px; --fs-18: 18px; --fs-24: 24px; --fs-28: 28px;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --touch: 44px; --btn: 80px;
+  
+  --bubble-shadow: drop-shadow(var(--shadow-size) var(--shadow-size) 0 var(--shadow));
+}
+html{touch-action:pan-x pan-y}
+body{margin:0;background:var(--bg)}
+.pg{box-sizing:border-box;min-height:100vh;background:var(--bg);color:var(--text);font:var(--fs-15)/1.5 var(--font-ui);padding:20px var(--sp-4) 40px}
+.pg *{box-sizing:border-box}
+.pg .in{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.pg a{color:var(--accent)}
+.pg code{font-size:var(--fs-13);background:var(--bg);padding:1px 5px;border-radius:4px}
+.pg .hd{font-size:var(--fs-13);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pg .bub{background:var(--surface);border:var(--stroke) solid var(--line);border-radius:20px;filter:var(--bubble-shadow);overflow:hidden}
+.pg .ttl{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-4);border-bottom:var(--stroke) solid var(--line)}
+.pg .ttl b{flex:1;font-size:var(--fs-18)}
+.pg .ttl .n{font-size:var(--fs-13);color:var(--muted)}
+.pg .ttl.col{display:block;padding:14px var(--sp-4)}
+.pg .ttl.col b{display:block}
+.pg .ttl.col span{font-size:var(--fs-13);color:var(--muted)}
+.pg .back{display:flex;align-items:center;justify-content:center;width:var(--touch);height:var(--touch);margin:-8px 0 -8px -12px;color:var(--text);text-decoration:none;font-size:22px}
+.pg .meta{padding:var(--sp-3) var(--sp-4);font-size:var(--fs-14);color:var(--muted)}
+.pg .meta+.meta{padding-top:0}
+.pg .sic{flex:none;color:var(--accent)}
+.pg .sic.warn{color:var(--danger)}
+.pg .sic.ok{color:var(--ok)}
+.pg .sec{display:flex;flex-direction:column;gap:var(--sp-3)}
+.pg .sh{display:flex;align-items:center;gap:var(--sp-3);padding:0 var(--sp-1)}
+.pg .sh b{flex:1;font-size:var(--fs-18)}
+.pg .sh .n{font-size:var(--fs-13);color:var(--muted)}
+.pg .list{display:flex;flex-direction:column;gap:10px}
+.pg .it{padding:14px;background:var(--raised);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-14);overflow-wrap:anywhere}
+.pg .it b{display:block;margin-bottom:2px;font-size:var(--fs-15)}
+.pg .ref,.pg .chip{display:inline-block;padding:0 var(--sp-2);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-12);color:var(--muted)}
+.pg .ref{margin:6px 6px 0 0}
+.pg .chip{border-color:var(--accent);font-weight:600;color:var(--accent)}
+.pg .hw{padding:14px;border:var(--stroke) solid var(--ok);border-radius:var(--radius);font-size:var(--fs-14);background:var(--raised)}
+.pg .nav{display:flex;justify-content:space-between;gap:var(--sp-4);padding:0 var(--sp-1);font-size:var(--fs-14)}
+.pg .tlx{position:relative;padding:6px 0 var(--sp-2)}
+.pg .tlx:before{content:"";position:absolute;left:27px;top:30px;bottom:34px;width:var(--stroke);background:var(--line)}
+.pg .grp{padding:var(--sp-3) var(--sp-4) 2px 52px;font-size:var(--fs-12);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pg .row{position:relative;display:flex;align-items:center;gap:var(--sp-3);min-height:64px;padding:var(--sp-3) var(--sp-4) var(--sp-3) 52px;color:var(--text);text-decoration:none}
+.pg .row:before{content:"";position:absolute;left:22px;top:23px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:var(--stroke) solid var(--accent)}
+.pg .row.now:before{background:var(--accent)}
+.pg .row:after{content:"";position:absolute;left:52px;right:var(--sp-4);bottom:0;border-bottom:var(--stroke) solid var(--line)}
+.pg .row.last:after{display:none}
+.pg .tx{flex:1;min-width:0}
+.pg .tx b{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-16)}
+.pg .tx small{display:block;font-size:var(--fs-13);line-height:1.4;color:var(--muted)}
+.pg .op{flex:none;color:var(--muted)}
+.pg .foot{margin:0;font-size:var(--fs-13);color:var(--muted)}
+.pg .tl{position:relative;display:flex;flex-direction:column;gap:10px;padding-left:28px}
+.pg .tl:before{content:"";position:absolute;left:5px;top:12px;bottom:12px;width:var(--stroke);background:var(--line)}
+.pg .c{position:relative;display:flex;align-items:flex-start;gap:10px;padding:var(--sp-3);background:var(--raised);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-14);overflow-wrap:anywhere}
+.pg .c:before{content:"";position:absolute;left:-28px;top:16px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:var(--stroke) solid var(--accent)}
+.pg .ty{flex:none;width:76px;padding:0 var(--sp-2);text-align:center;border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-12);color:var(--muted)}
+.pg .ty.fix{border-color:var(--danger);color:var(--danger)}
+.pg p{margin:0}
+</style>
+</head>
+<body>
+<div class="pg"><div class="in">
+<div class="bub">
+<div class="ttl"><a class="back" href="../index.html" aria-label="All versions">‹</a><b>v4.1.0</b><span class="n">2026-11-19</span></div>
+<div class="meta"><b>GAMiq, basketball complete:</b> the shot clock system becomes a display system for games and sports, and basketball is its first game type: besides the shot clock, a unit can show the game clock with the period strips and the possession arrow, or the score. Works with units of the same MAJOR version (4).</div>
+</div>
+<div class="sec">
+<div class="sh"><svg class="sic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><b>Highlights</b><span class="n">5</span></div>
+<div class="list"><div class="it">**Jobs (<i>Rolle</i>) per unit:** shot clock, game clock + possession arrow, score home + guest, score home, score guest. A joining unit takes the first free position of the default order; the jobs, the game type and its settings (periods 4 or 8, length of a period, overtime) are set on the phone in the <i>Spiele</i> popup (<i>Spielart</i> › <i>Details</i>, the unit's row) and are locked while a game is held. A job only one unit can hold is swapped after a question.</div>
+<div class="it"><b>Phone page by parts</b>the shot clock, the game clock (strips, ±1 s and ±0.1 s in the last minute, <i>Zeit setzen</i>, next period, end of the game, a horn at 0) and the score (+2, +1, +3, −1) with the <i>Wechselpfeil</i>. Below 768 px one part with a strip of tabs, from 768 px all parts side by side. A part no unit shows has no controls. The score goes up to 999.</div>
+<div class="it"><b>Panels</b>a screen per job (game clock with the period strips and the arrow, the score in one line or one score large, the shot clock goes dark with less game time left) and the flip number on a change of score.</div>
+<div class="it"><b>GAMiq</b>a new logo on the start screen, the hotspot <code>GAMiq_&lt;colour&gt;_&lt;id&gt;</code>, the page title and the texts (a unit is a unit; the shot clock is one job).</div>
+<div class="it"><b>Prepared for further game types</b>the platform and a game type are apart (<code>platform/</code>, <code>games/&lt;name&gt;/</code>), and <code>python3 -m ship newgame &lt;name&gt;</code> makes the folders of a new one. The guide has a chapter for the basics, one for the game type and one for several games and game types.</div>
+</div>
+</div>
+
+<div class="sec">
+<div class="sh"><svg class="sic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>Fixes and changes</b><span class="n">4</span></div>
+<div class="list"><div class="it">A job and a game type can only change while no game is held; the phone says why.</div>
+<div class="it">The page loads the parts of a game one at a time, so three phones do not starve the Master of connections.</div>
+<div class="it">A Slave's period lengths follow the settings; <code>game_set</code> cannot wrap for a huge value; the horn is fetched when the game clock part loads first.</div>
+<div class="it">The page ships without indentation and comments (about 14.3 KB gzip).</div>
+</div>
+</div>
+
+<div class="sec">
+<div class="sh"><svg class="sic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg><b>Changes to know</b><span class="n">3</span></div>
+<div class="list"><div class="it"><b>The host name of a unit is now <code>gamiq-&lt;id&gt;.local</code></b>(it was <code>shotclock-&lt;id&gt;.local</code>). A bookmark or a home automation that uses the old name stops working; there is no transition. The QR code on the panel uses the IP address and is not affected; the units find each other by their services, not by the host name.</div>
+<div class="it"><b>Tested with up to three phones</b>on one system; a fourth works but is outside what is tested.</div>
+<div class="it">The boot line <code>SHOTCLOCK id=…</code>, the release site and the repositories keep their names.</div>
+</div>
+</div>
+
+<div class="sec">
+<div class="sh"><svg class="sic warn" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17.2v.1"/></svg><b>Known limits</b><span class="n">1</span></div>
+<div class="list"><div class="it">A second real game type (the names of one game type are global, the page and REST assume one game type) needs more work than the scaffold shows: #334, #335, #336.</div>
+</div>
+</div>
+
+<div class="sec">
+<div class="sh"><svg class="sic ok" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><b>Hardware verification</b></div>
+<div class="hw">Two units (blue <code>cb5cb0</code>, red <code>cb5cb4</code>), bench image <code>4.0.0-95-g33f1f35-dirty</code>. S4: 10 passed, 541 s. S5, 60 min, three phones, after that bench: D1 100 %, D3 99.7 / 99.8 / 99.5 %, B3 exactly once, B2 7/7, E2 0 (<code>hw_soak_v4.0.0-95-g33f1f35_2237</code>). S4 <code>--stress</code> that afternoon on an earlier image of the same version string: D1 100 %, B3 2907/2907. The owner accepted the panels, the phone, the QR code, the horn, the licences, the DNS name <code>gamiq-&lt;id&gt;.local</code> and the update from an official 4.0. This bench has two units, not five. This tag adds one fix on that image: once a Slave has echoed the game type and the settings, a later job or name does not make the Master send them again.</div>
+</div>
+
+<div class="nav"><a href="../4.0.0/notes.html">‹ v4.0.0</a><span></span></div>
+</div></div>
+</body>
+</html>
