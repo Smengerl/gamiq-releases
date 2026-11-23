@@ -8,7 +8,7 @@
 :root {
   --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
   --text: #ffffff; --muted: #d0d0d0; --accent: #ff9a1a; --on-accent: #000000;
-  --danger: #ff6b6b; --ok: #7cff6b;
+  --danger: #ff6b6b;
   --guide: #b48cff; --on-guide: #000000;   
   --shadow: #5c5c5c; --shadow-size: 4px;   
   --unit: #ff4d4d;   
@@ -26,6 +26,7 @@
 html{touch-action:pan-x pan-y}
 body{margin:0;background:var(--bg)}
 .pg{box-sizing:border-box;min-height:100vh;background:var(--bg);color:var(--text);font:var(--fs-15)/1.5 var(--font-ui);padding:20px var(--sp-4) 40px}
+.pg{--ok:#7cff6b}   /* this page's own "checked" green (a passed row, the hardware box); the phone page has none */
 .pg *{box-sizing:border-box}
 .pg .in{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
 .pg a{color:var(--accent)}
@@ -85,7 +86,7 @@ body{margin:0;background:var(--bg)}
 <div class="ttl col"><b>Beta channel</b></div>
 <div class="meta">A test build for units with engineering mode on; only the latest beta is kept.</div>
 </div>
-<p class="foot"><a href="4.2.0-beta.36/notes.html">Notes of 4.2.0-beta.36</a></p>
+<p class="foot"><a href="4.2.0-beta.37/notes.html">Notes of 4.2.0-beta.37</a></p>
 </div></div>
 </body>
 </html>
