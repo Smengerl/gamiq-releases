@@ -1,16 +1,16 @@
 {
  "format": 1,
  "channel": "beta",
- "version": "4.3.0-beta.44",
+ "version": "4.3.0-beta.46",
  "summary": "Test build of main since v4.1.0, for units with engineering mode",
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/gamiq-releases/beta/4.3.0-beta.44/shotclock-mps3-64-4.3.0-beta.44.bin",
+   "url": "https://smengerl.github.io/gamiq-releases/beta/4.3.0-beta.46/shotclock-mps3-64-4.3.0-beta.46.bin",
    "size": 1791056,
-   "sha256": "0169cbd5cb93f0209ac962ca541f22692650052a02c04e1c042b62c64e61237f",
+   "sha256": "05aba0cdd2109a01979b1777f07d923ddf9dde5fab64ab46c9f2764fd64e6bc5",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/gamiq-releases/beta/4.3.0-beta.44/notes.html"
+ "notes_url": "https://smengerl.github.io/gamiq-releases/beta/4.3.0-beta.46/notes.html"
 }
