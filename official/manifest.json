@@ -6,11 +6,11 @@
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/shotclock-releases/official/4.1.0/shotclock-mps3-64-4.1.0.bin",
+   "url": "https://smengerl.github.io/gamiq-releases/official/4.1.0/shotclock-mps3-64-4.1.0.bin",
    "size": 1768912,
    "sha256": "da460294bd6e302f7847e4c80d0a8734bde1c604a7b4d2fddad2227a09f3b9e8",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/shotclock-releases/official/4.1.0/notes.html"
+ "notes_url": "https://smengerl.github.io/gamiq-releases/official/4.1.0/notes.html"
 }
