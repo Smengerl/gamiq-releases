@@ -1,16 +1,16 @@
 {
  "format": 1,
  "channel": "official",
- "version": "4.1.0",
- "summary": "GAMiq, basketball complete: the shot clock system becomes a display system for games and",
+ "version": "4.2.0",
+ "summary": "Colour cycle and time bar join basketball: two training game types on one platform",
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/gamiq-releases/official/4.1.0/shotclock-mps3-64-4.1.0.bin",
-   "size": 1768912,
-   "sha256": "da460294bd6e302f7847e4c80d0a8734bde1c604a7b4d2fddad2227a09f3b9e8",
+   "url": "https://smengerl.github.io/gamiq-releases/official/4.2.0/gamiq-mps3-64-4.2.0.bin",
+   "size": 1796368,
+   "sha256": "df13406776ec3d1db39a10dd1564856edefb03a29cc1350238a43af24abc5767",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/gamiq-releases/official/4.1.0/notes.html"
+ "notes_url": "https://smengerl.github.io/gamiq-releases/official/4.2.0/notes.html"
 }

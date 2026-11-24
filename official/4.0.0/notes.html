@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Release notes v4.0.0</title>
+<style>
+:root {
+  --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
+  --text: #ffffff; --muted: #d0d0d0; --accent: #ff9a1a; --on-accent: #000000;
+  --danger: #ff6b6b;
+  --guide: #b48cff; --on-guide: #000000;   
+  --shadow: #5c5c5c; --shadow-size: 4px;   
+  --unit: #ff4d4d;   
+  --font-ui: system-ui, sans-serif;   
+  --font-num: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --num-slant: normal;
+  --radius: 12px; --stroke: 1.5px; --label-case: none;
+  
+  --fs-12: 12px; --fs-13: 13px; --fs-14: 14px; --fs-15: 15px; --fs-16: 16px; --fs-18: 18px; --fs-24: 24px; --fs-28: 28px;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --touch: 44px; --btn: 80px;
+  
+  --bubble-shadow: drop-shadow(var(--shadow-size) var(--shadow-size) 0 var(--shadow));
+}
+html{touch-action:pan-x pan-y}
+body{margin:0;background:var(--bg)}
+.pg{box-sizing:border-box;min-height:100vh;background:var(--bg);color:var(--text);font:var(--fs-15)/1.5 var(--font-ui);padding:20px var(--sp-4) 40px}
+.pg{--ok:#7cff6b}   /* this page's own "checked" green (a passed row, the hardware box); the phone page has none */
+.pg *{box-sizing:border-box}
+.pg .in{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.pg a{color:var(--accent)}
+.pg code{font-size:var(--fs-13);background:var(--bg);padding:1px 5px;border-radius:4px}
+.pg .hd{font-size:var(--fs-13);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pg .bub{background:var(--surface);border:var(--stroke) solid var(--line);border-radius:20px;filter:var(--bubble-shadow);overflow:hidden}
+.pg .ttl{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-4);border-bottom:var(--stroke) solid var(--line)}
+.pg .ttl b{flex:1;font-size:var(--fs-18)}
+.pg .ttl .n{font-size:var(--fs-13);color:var(--muted)}
+.pg .ttl.col{display:block;padding:14px var(--sp-4)}
+.pg .ttl.col b{display:block}
+.pg .ttl.col span{font-size:var(--fs-13);color:var(--muted)}
+.pg .back{display:flex;align-items:center;justify-content:center;width:var(--touch);height:var(--touch);margin:-8px 0 -8px -12px;color:var(--text);text-decoration:none;font-size:22px}
+.pg .meta{padding:var(--sp-3) var(--sp-4);font-size:var(--fs-14);color:var(--muted)}
+.pg .meta+.meta{padding-top:0}
+.pg .sic{flex:none;color:var(--accent)}
+.pg .sic.warn{color:var(--danger)}
+.pg .sic.ok{color:var(--ok)}
+.pg .sec{display:flex;flex-direction:column;gap:var(--sp-3)}
+.pg .sh{display:flex;align-items:center;gap:var(--sp-3);padding:0 var(--sp-1)}
+.pg .sh b{flex:1;font-size:var(--fs-18)}
+.pg .sh .n{font-size:var(--fs-13);color:var(--muted)}
+.pg .list{display:flex;flex-direction:column;gap:10px}
+.pg .it{padding:14px;background:var(--raised);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-14);overflow-wrap:anywhere}
+.pg .it b{display:block;margin-bottom:2px;font-size:var(--fs-15)}
+.pg .ref,.pg .chip{display:inline-block;padding:0 var(--sp-2);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-12);color:var(--muted)}
+.pg .ref{margin:6px 6px 0 0}
+.pg .chip{border-color:var(--accent);font-weight:600;color:var(--accent)}
+.pg .hw{padding:14px;border:var(--stroke) solid var(--ok);border-radius:var(--radius);font-size:var(--fs-14);background:var(--raised)}
+.pg .nav{display:flex;justify-content:space-between;gap:var(--sp-4);padding:0 var(--sp-1);font-size:var(--fs-14)}
+.pg .tlx{position:relative;padding:6px 0 var(--sp-2)}
+.pg .tlx:before{content:"";position:absolute;left:27px;top:30px;bottom:34px;width:var(--stroke);background:var(--line)}
+.pg .grp{padding:var(--sp-3) var(--sp-4) 2px 52px;font-size:var(--fs-12);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pg .row{position:relative;display:flex;align-items:center;gap:var(--sp-3);min-height:64px;padding:var(--sp-3) var(--sp-4) var(--sp-3) 52px;color:var(--text);text-decoration:none}
+.pg .row:before{content:"";position:absolute;left:22px;top:23px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:var(--stroke) solid var(--accent)}
+.pg .row.now:before{background:var(--accent)}
+.pg .row:after{content:"";position:absolute;left:52px;right:var(--sp-4);bottom:0;border-bottom:var(--stroke) solid var(--line)}
+.pg .row.last:after{display:none}
+.pg .tx{flex:1;min-width:0}
+.pg .tx b{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-16)}
+.pg .tx small{display:block;font-size:var(--fs-13);line-height:1.4;color:var(--muted)}
+.pg .op{flex:none;color:var(--muted)}
+.pg .foot{margin:0;font-size:var(--fs-13);color:var(--muted)}
+.pg .tl{position:relative;display:flex;flex-direction:column;gap:10px;padding-left:28px}
+.pg .tl:before{content:"";position:absolute;left:5px;top:12px;bottom:12px;width:var(--stroke);background:var(--line)}
+.pg .c{position:relative;display:flex;align-items:flex-start;gap:10px;padding:var(--sp-3);background:var(--raised);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-14);overflow-wrap:anywhere}
+.pg .c:before{content:"";position:absolute;left:-28px;top:16px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:var(--stroke) solid var(--accent)}
+.pg .ty{flex:none;width:76px;padding:0 var(--sp-2);text-align:center;border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-12);color:var(--muted)}
+.pg .ty.fix{border-color:var(--danger);color:var(--danger)}
+.pg p{margin:0}
+</style>
+</head>
+<body>
+<div class="pg"><div class="in">
+<div class="bub">
+<div class="ttl"><a class="back" href="../index.html" aria-label="All versions">‹</a><b>v4.0.0</b><span class="n">2026-11-17</span></div>
+<div class="meta">The firmware is split into a platform and a game type: the platform carries WiFi, the unit link, the web server, update and pairing, the game type (here the basketball shot clock) carries the rules, its screens and its part of the page. The first game type behaves as before; later ones can reuse the platform. <b>This is a MAJOR step: the unit link and the REST API are version 4, units of <code>v3.x</code> and <code>v4.0.0</code> do not play together. Update every unit of a system to <code>v4.0.0</code>.</b></div>
+</div>
+<div class="sec">
+<div class="sh"><svg class="sic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/></svg><b>What is new</b><span class="n">4</span></div>
+<div class="list"><div class="it"><b>Platform and game type</b>the sources are <code>platform/</code> and <code>games/&lt;game type&gt;/</code>, the page is a shell in <code>frontend/platform/</code> and a game part in <code>frontend/games/&lt;name&gt;/</code>. A script (<code>check_repo.py</code>) keeps the platform free of any game type, the shell included.<br><span class="ref">#243</span></div>
+<div class="it"><b>Unit link and REST v4</b>the game travels in one opaque object, <code>app</code>, next to the game type <code>gt</code>; <code>GET /api/state</code> is <code>{gt, app, rssi, paired}</code> and <code>app</code> is made by the same encoder as the link's. Standby belongs to the platform. The basketball commands and states are named after the game's events (<code>clock_start</code>, <code>shot_24</code>, ...). <code>link.md</code>, <code>rest.md</code> and <code>games/basketball.md</code> describe it.</div>
+<div class="it"><b>Five units per system</b>up to five shot clocks play one game (the limit was four).</div>
+<div class="it"><b>The guide</b>takes the steps of its game chapter and its demo states from the game type.</div>
+</div>
+</div>
+
+<div class="sec">
+<div class="sh"><svg class="sic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><b>Fixes and changes</b><span class="n">14</span></div>
+<div class="list"><div class="it">The game chapter and demo states come from the game type<br><span class="ref">#243</span></div>
+<div class="it">REST app through the one encoder; budget test with a full app<br><span class="ref">#243</span></div>
+<div class="it">GamePresence instead of two flags<br><span class="ref">#243</span></div>
+<div class="it">Guide demo states are never standby: drop the dead branch<br><span class="ref">#243</span></div>
+<div class="it">The key app of a state is checked without the deprecated containsKey (#243 Q7)</div>
+<div class="it">The test game type's encode_rest returns its length (#243 Q7)</div>
+<div class="it">Review findings of the v4 wire step (#243 Q7)</div>
+<div class="it">Five units per system (E8 of #243)</div>
+<div class="it">System tests, the guide check and review findings of the wire step (#243 Q7)</div>
+<div class="it">Wire and REST v4, standby is the platform's (#243 Q7)</div>
+<div class="it">Basketball's commands and shot clock states named after the game's events (#243 Q7)</div>
+<div class="it">The page fails to build without its game, review findings of Q5 (#243 Q5)</div>
+<div class="it">The layer and cycle rules see every spelling of a firmware include (#243 Q4)</div>
+<div class="it">Release gate reads version.h from the platform, review findings of Q4b (#243 Q4)</div>
+</div>
+</div>
+
+<div class="sec">
+<div class="sh"><svg class="sic warn" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17.2v.1"/></svg><b>Known limits</b><span class="n">2</span></div>
+<div class="list"><div class="it">A recovery after a power cut of the Master took 127 s once in the soak of <code>v3.0.0</code>; the later soaks recovered within 8 s and the case is not reproduced (#238, moved to v4.1).</div>
+<div class="it">The <code>app</code> object of a state is at most 340 bytes, so that the largest report still fits one datagram (<code>link.md</code>, Budgets); more than two units run on virtual units only, because the bench has two.</div>
+</div>
+</div>
+
+<div class="sec">
+<div class="sh"><svg class="sic ok" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><b>Hardware verification</b><span class="n">4</span></div>
+<div class="hw">Two units (cb5cb0, cb5cb4), <code>3.1.0-50-gda2401c</code> (the firmware of this release):</div><div class="hw"><b>S4 hardware suite and phone stress:</b> the suite (17 tests) and the stress run with phones passed.</div><div class="hw"><b>S5 soak (150 min, 3 phones):</b> commands 100 % confirmed and exactly once (2892 of 2892), A1 99.5 %, A3 at most 7.8 s over 7 resets, 7 of 7 power cuts survived, no unplanned restart, no split brain.</div><div class="hw"><b>S6 (panels by eye):</b> the owner checked the panels and the page; passed.</div><div class="hw"><b>Not run on units:</b> five units in one system; the owner accepted gates 8 and 9 (the rows of <code>docs/test/hardware.md</code> not run this time, #186 still <code>needs-hardware-test</code>).</div>
+</div>
+
+<div class="nav"><a href="../3.1.0/notes.html">‹ v3.1.0</a><a href="../4.1.0/notes.html">v4.1.0 ›</a></div>
+</div></div>
+</body>
+</html>

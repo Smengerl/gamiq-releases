@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>GAMiq guide</title>
+<style>
+:root {
+  --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
+  --text: #ffffff; --muted: #d0d0d0; --accent: #ff9a1a; --on-accent: #000000;
+  --danger: #ff6b6b;
+  --guide: #b48cff; --on-guide: #000000;   
+  --shadow: #5c5c5c; --shadow-size: 4px;   
+  --unit: #ff4d4d;   
+  --font-ui: system-ui, sans-serif;   
+  --font-num: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --num-slant: normal;
+  --radius: 12px; --stroke: 1.5px; --label-case: none;
+  
+  --fs-12: 12px; --fs-13: 13px; --fs-14: 14px; --fs-15: 15px; --fs-16: 16px; --fs-18: 18px; --fs-24: 24px; --fs-28: 28px;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --touch: 44px; --btn: 80px;
+  
+  --bubble-shadow: drop-shadow(var(--shadow-size) var(--shadow-size) 0 var(--shadow));
+}
+html{touch-action:pan-x pan-y}
+body{margin:0;background:var(--bg)}
+.pg{box-sizing:border-box;min-height:100vh;background:var(--bg);color:var(--text);font:var(--fs-15)/1.5 var(--font-ui);padding:20px var(--sp-4) 40px}
+.pg{--ok:#7cff6b}   /* this page's own "checked" green (a passed row, the hardware box); the phone page has none */
+.pg *{box-sizing:border-box}
+.pg .in{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.pg a{color:var(--accent)}
+.pg code{font-size:var(--fs-13);background:var(--bg);padding:1px 5px;border-radius:4px}
+.pg .hd{font-size:var(--fs-13);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pg .bub{background:var(--surface);border:var(--stroke) solid var(--line);border-radius:20px;filter:var(--bubble-shadow);overflow:hidden}
+.pg .ttl{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-4);border-bottom:var(--stroke) solid var(--line)}
+.pg .ttl b{flex:1;font-size:var(--fs-18)}
+.pg .ttl .n{font-size:var(--fs-13);color:var(--muted)}
+.pg .ttl.col{display:block;padding:14px var(--sp-4)}
+.pg .ttl.col b{display:block}
+.pg .ttl.col span{font-size:var(--fs-13);color:var(--muted)}
+.pg .back{display:flex;align-items:center;justify-content:center;width:var(--touch);height:var(--touch);margin:-8px 0 -8px -12px;color:var(--text);text-decoration:none;font-size:22px}
+.pg .meta{padding:var(--sp-3) var(--sp-4);font-size:var(--fs-14);color:var(--muted)}
+.pg .meta+.meta{padding-top:0}
+.pg .sic{flex:none;color:var(--accent)}
+.pg .sic.warn{color:var(--danger)}
+.pg .sic.ok{color:var(--ok)}
+.pg .sec{display:flex;flex-direction:column;gap:var(--sp-3)}
+.pg .sh{display:flex;align-items:center;gap:var(--sp-3);padding:0 var(--sp-1)}
+.pg .sh b{flex:1;font-size:var(--fs-18)}
+.pg .sh .n{font-size:var(--fs-13);color:var(--muted)}
+.pg .list{display:flex;flex-direction:column;gap:10px}
+.pg .it{padding:14px;background:var(--raised);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-14);overflow-wrap:anywhere}
+.pg .it b{display:block;margin-bottom:2px;font-size:var(--fs-15)}
+.pg .ref,.pg .chip{display:inline-block;padding:0 var(--sp-2);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-12);color:var(--muted)}
+.pg .ref{margin:6px 6px 0 0}
+.pg .chip{border-color:var(--accent);font-weight:600;color:var(--accent)}
+.pg .hw{padding:14px;border:var(--stroke) solid var(--ok);border-radius:var(--radius);font-size:var(--fs-14);background:var(--raised)}
+.pg .nav{display:flex;justify-content:space-between;gap:var(--sp-4);padding:0 var(--sp-1);font-size:var(--fs-14)}
+.pg .tlx{position:relative;padding:6px 0 var(--sp-2)}
+.pg .tlx:before{content:"";position:absolute;left:27px;top:30px;bottom:34px;width:var(--stroke);background:var(--line)}
+.pg .grp{padding:var(--sp-3) var(--sp-4) 2px 52px;font-size:var(--fs-12);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pg .row{position:relative;display:flex;align-items:center;gap:var(--sp-3);min-height:64px;padding:var(--sp-3) var(--sp-4) var(--sp-3) 52px;color:var(--text);text-decoration:none}
+.pg .row:before{content:"";position:absolute;left:22px;top:23px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:var(--stroke) solid var(--accent)}
+.pg .row.now:before{background:var(--accent)}
+.pg .row:after{content:"";position:absolute;left:52px;right:var(--sp-4);bottom:0;border-bottom:var(--stroke) solid var(--line)}
+.pg .row.last:after{display:none}
+.pg .tx{flex:1;min-width:0}
+.pg .tx b{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-16)}
+.pg .tx small{display:block;font-size:var(--fs-13);line-height:1.4;color:var(--muted)}
+.pg .op{flex:none;color:var(--muted)}
+.pg .foot{margin:0;font-size:var(--fs-13);color:var(--muted)}
+.pg .tl{position:relative;display:flex;flex-direction:column;gap:10px;padding-left:28px}
+.pg .tl:before{content:"";position:absolute;left:5px;top:12px;bottom:12px;width:var(--stroke);background:var(--line)}
+.pg .c{position:relative;display:flex;align-items:flex-start;gap:10px;padding:var(--sp-3);background:var(--raised);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-14);overflow-wrap:anywhere}
+.pg .c:before{content:"";position:absolute;left:-28px;top:16px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:var(--stroke) solid var(--accent)}
+.pg .ty{flex:none;width:76px;padding:0 var(--sp-2);text-align:center;border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-12);color:var(--muted)}
+.pg .ty.fix{border-color:var(--danger);color:var(--danger)}
+.pg p{margin:0}
+</style>
+</head>
+<body>
+<div class="pg"><div class="in">
+<div class="hd">GAMiq</div>
+<div class="bub"><div class="ttl col"><b>GAMiq guide</b></div><div class="meta">Everything a club needs to set up and run a GAMiq system. The same chapters are in the guide inside the phone page (the lock screen, <i>Guide</i>), always for the version on your units.</div></div>
+<div class="sec"><div class="sh"><b>What you need</b></div><div class="bub"><ul><li>One or more GAMiq units (up to five per game), each with power (USB or the integrated supply).</li><li>A 2.4 GHz WiFi network that the units and your phone can join. A phone hotspot works too.</li><li>A phone or tablet with a browser. No app is needed.</li></ul></div></div>
+<div class="sec"><div class="sh"><b>First start (once per unit)</b></div><div class="bub"><div class="meta"><ol><li>Tap “Set up WiFi”, choose your network and enter the password.</li><li>The unit restarts and joins the WiFi.</li><li>Connect your phone to the same WiFi and scan the QR code on the panel: it opens the controls and pairs the phone. Without a scan, enter the IP address shown there in the browser and then the code under the QR code.</li><li>The guide to the game, the settings and the update is then on the page, under “Start game”.</li><li>Switch on the second unit – it finds the first one automatically.</li></ol></div><div class="meta">If the saved network is not available (router still starting), the unit retries it every 5 minutes while no phone is connected to its hotspot.</div></div></div>
+<div class="sec"><div class="sh"><b>Every start</b></div><div class="meta">Switch the units on. They join the WiFi, find each other and agree on their roles within about ten seconds; nobody has to choose a Master. The Master's panel shows a QR code, the IP address and a six-digit code. Scan the QR code to open the controller and pair the phone; without a scan, type the IP address into the browser and enter the code. The phone and the units have to be on the same WiFi.</div></div>
+<div class="sec"><div class="sh"><b>Basics</b></div><div class="meta">Units, lock, settings, games</div><div class="list"><div class="it"><b>Your system</b>This phone operates every display of a game. The bar at the top shows what belongs to the system.</div><div class="it"><b>Connected units</b>At the top: the units of this game as colour dot with signal, the Master with a ring.</div><div class="it"><b>Lock operation</b>Press it when the game is over: the game mode ends and the units go to standby. “Start game” begins a new game at any time.</div><div class="it"><b>Settings</b>Connect more phones, set the language and install updates here.</div><div class="it"><b>Games</b>All games on the WiFi, and which unit plays in which. Each game has its own units and its own controls.</div></div></div>
+<div class="sec"><div class="sh"><b>Basketball</b></div><div class="meta">Shot clock, game clock, score, possession arrow</div><div class="list"><div class="it"><b>The clock</b>The ring shows how much of the 24 seconds is left. In the last 5 seconds the number turns red.</div><div class="it"><b>Start the clock</b>Starts the clock on every display at once.</div><div class="it"><b>Stop</b>Stops the clock. “Start” lets it run on.</div><div class="it"><b>Reset</b>Sets the clock to 14 or 24 seconds.</div><div class="it"><b>Correct the time</b>The buttons left and right of the ring take a second away or add one.</div><div class="it"><b>Off</b>Switches the displays off, for example between two possessions. “On” switches them back on with the time.</div><div class="it"><b>Game clock</b>Shows the time remaining in the period. It starts and stops with the shot clock. In the last minute it shows tenths of a second.</div><div class="it"><b>Periods</b>Shows the active quarter (or eighth, depending on the game mode) and lets you choose the active period.</div><div class="it"><b>Set time</b>Sets the remaining time that is shown. At the end of a period the next period can be started here.</div><div class="it"><b>Score</b>Set and correct the score for home and guest.</div><div class="it"><b>Possession arrow</b>The arrow points to the team that gets the next alternating-possession throw-in. After the throw-in, one tap on the other side turns it.</div></div></div>
+<div class="sec"><div class="sh"><b>Colour cycle</b></div><div class="meta">The colours move on</div><div class="list"><div class="it"><b>The countdown</b>To the next change. It is the same on every panel.</div><div class="it"><b>The lanes</b>Each dot is a unit, in the colour it shows now.</div><div class="it"><b>Next</b>Changes at once, without waiting for the time.</div></div></div>
+<div class="sec"><div class="sh"><b>Time bar</b></div><div class="meta">Counts up to a time</div><div class="list"><div class="it"><b>The time</b>Elapsed and the total. The bar shows how much of it is gone.</div><div class="it"><b>Total time</b>Pick a time or change it by a minute, also while it runs.</div><div class="it"><b>Start and stop</b>At the total the bar stops and shows the end.</div></div></div>
+<div class="sec"><div class="sh"><b>Several games and game types</b></div><div class="meta">Game type, jobs, name, new game</div><div class="list"><div class="it"><b>Name of the game</b>The name at the top is the game you are operating right now. It tells the games apart when several run on the same WiFi.</div><div class="it"><b>This game</b>The units that play in this game now. The pen gives the game a name; it has to differ from the other games&#x27; names.</div><div class="it"><b>Game type</b>The game type of the system. “Change” opens the other game types, their settings are below; that works only while no game is held.</div><div class="it"><b>Job of a unit</b>Tap a unit and choose its job, that is what it shows. Below it says who holds the job already. A job only one unit can hold is swapped after a question.</div><div class="it"><b>Assign units</b>Here you assign the units of this game to one of the other games running at the same time: tap a unit and pick the game. If the move does not work, it stays in this game.</div><div class="it"><b>New game</b>The unit starts a game of its own and becomes its Master. Give it a name right away.</div><div class="it"><b>Other games on the WiFi</b>The other games with their units. A game has at most five units.</div><div class="it"><b>Not during a game</b>While a game is running, no units can be assigned to other games. Wait until the game is over.</div></div></div>
+<div class="sec"><div class="sh"><b>Settings</b></div><div class="meta">More phones, language, units</div><div class="list"><div class="it"><b>Connect another phone</b>Shows a code with which a second phone can operate the unit.</div><div class="it"><b>Sign out all phones</b>Every other phone loses operation. This phone stays connected.</div><div class="it"><b>Language</b>The language of this page and of the displays.</div><div class="it"><b>Unit details</b>Settings of each unit and information about its software version and update.</div><div class="it"><b>Rename</b>The pen gives a unit a name, for example “Home” or “Guest”.</div></div></div>
+<div class="sec"><div class="sh"><b>Update</b></div><div class="meta">Check for and install new software</div><div class="list"><div class="it"><b>Check for updates</b>The units look for new software only when you open the settings or tap here.</div><div class="it"><b>Software and update</b>This shows the unit&#x27;s software. When a newer version is ready, “Update avail.” and the button “Update” appear; it works only while no game runs. After the restart the unit checks the new version and returns to the old one by itself if something is wrong.</div><div class="it"><b>Update automatically</b>At start the unit checks for a newer official release of the same MAJOR version and installs it automatically, never a beta. Starting a game stops it.</div></div></div>
+<div class="sec"><div class="sh"><b>Help</b></div><div class="meta">Connection, power cut, sound, security</div><div class="list"><div class="it"><b>Connection lost</b>If the page says “Connection lost” or the time stands still, the phone cannot reach the system. Check that the phone is on the same WiFi as the units. The game on the panels goes on.</div><div class="it"><b>A unit loses power</b>The game goes on on the other unit, which becomes the Master after about 23 seconds. A paused game is kept, but its QR code covers it until a phone is connected: scan it once, the code belongs to that unit.</div><div class="it"><b>A unit shows its own QR code after an update</b>It runs another MAJOR version and no longer joins the others. Update the other units too, one by one, in their settings.</div><div class="it"><b>Sound</b>The units have no speaker, the signal comes from the phone. Pair a Bluetooth speaker with it, unmute it and tap once on the page after loading. Keep the page in front and set the screen timeout before a game to the longest value or off: a locked phone stays silent.</div><div class="it"><b>The QR code does not scan</b>The LED spacing makes it hard for some cameras at close range. Hold the phone one to three metres away, or type the address shown below the code and enter the code.</div><div class="it"><b>Who can operate</b>Anyone on the same WiFi can watch, only paired phones can operate. Pairing keeps bystanders from pressing buttons; it is no protection against someone who can read the network traffic: use a network you trust or a hotspot of your own.</div></div></div>
+</div></div>
+</body>
+</html>
