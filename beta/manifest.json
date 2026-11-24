@@ -1,16 +1,16 @@
 {
  "format": 1,
  "channel": "beta",
- "version": "4.3.0-beta.5",
+ "version": "4.3.0-beta.6",
  "summary": "Test build of main since v4.2.0, for units with engineering mode",
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/gamiq-releases/beta/4.3.0-beta.5/gamiq-mps3-64-4.3.0-beta.5.bin",
+   "url": "https://smengerl.github.io/gamiq-releases/beta/4.3.0-beta.6/gamiq-mps3-64-4.3.0-beta.6.bin",
    "size": 1797824,
-   "sha256": "cab01ed9ac44024cf71010e0a829622b282aa81b6e411ee811c1d50f738ce698",
+   "sha256": "4ba259171d7868fec199617841f7f8e940a683dd1e8034e32e6c04c02f4d67d8",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/gamiq-releases/beta/4.3.0-beta.5/notes.html"
+ "notes_url": "https://smengerl.github.io/gamiq-releases/beta/4.3.0-beta.6/notes.html"
 }
