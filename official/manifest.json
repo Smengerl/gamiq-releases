@@ -1,16 +1,16 @@
 {
  "format": 1,
  "channel": "official",
- "version": "4.2.0",
- "summary": "Colour cycle and time bar join basketball: two training game types on one platform",
+ "version": "4.2.1",
+ "summary": "A delivery after 4.2.0: the update screen, the settings of each game type, a manual with",
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/gamiq-releases/official/4.2.0/gamiq-mps3-64-4.2.0.bin",
-   "size": 1796368,
-   "sha256": "df13406776ec3d1db39a10dd1564856edefb03a29cc1350238a43af24abc5767",
+   "url": "https://smengerl.github.io/gamiq-releases/official/4.2.1/gamiq-mps3-64-4.2.1.bin",
+   "size": 1800816,
+   "sha256": "6705b4ef565969776435025a86dbe34c1ef8eb4de41aaea9d9b6c55996361f06",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/gamiq-releases/official/4.2.0/notes.html"
+ "notes_url": "https://smengerl.github.io/gamiq-releases/official/4.2.1/notes.html"
 }
