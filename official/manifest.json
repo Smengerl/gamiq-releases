@@ -1,16 +1,16 @@
 {
  "format": 1,
  "channel": "official",
- "version": "4.2.1",
- "summary": "A delivery after 4.2.0: the update screen, the settings of each game type, a manual with",
+ "version": "4.3.0",
+ "summary": "New game type interval timer (work, rest, rounds) and a colour wheel for circuit training",
  "images": [
   {
    "hw": "mps3-64",
-   "url": "https://smengerl.github.io/gamiq-releases/official/4.2.1/gamiq-mps3-64-4.2.1.bin",
-   "size": 1800816,
-   "sha256": "6705b4ef565969776435025a86dbe34c1ef8eb4de41aaea9d9b6c55996361f06",
+   "url": "https://smengerl.github.io/gamiq-releases/official/4.3.0/gamiq-mps3-64-4.3.0.bin",
+   "size": 1893792,
+   "sha256": "dbe52db2fbf30961eed5964c3f002347d10e105b6a9bc0707453cc06ec7dbc18",
    "min_version": "2.0.0-0"
   }
  ],
- "notes_url": "https://smengerl.github.io/gamiq-releases/official/4.2.1/notes.html"
+ "notes_url": "https://smengerl.github.io/gamiq-releases/official/4.3.0/notes.html"
 }

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>GAMiq guide</title>
+<style>
+:root {
+  --bg: #000000; --surface: #141414; --raised: #1f1f1f; --line: #5c5c5c;
+  --text: #ffffff; --muted: #d0d0d0; --accent: #ff9a1a; --on-accent: #000000;
+  --danger: #ff6b6b;
+  --guide: #b48cff; --on-guide: #000000;   
+  --shadow: #5c5c5c; --shadow-size: 4px;   
+  --unit: #ff4d4d;   
+  --font-ui: system-ui, sans-serif;   
+  --font-num: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --num-slant: normal;
+  --radius: 12px; --stroke: 1.5px; --label-case: none;
+  
+  --fs-12: 12px; --fs-13: 13px; --fs-14: 14px; --fs-15: 15px; --fs-16: 16px; --fs-18: 18px; --fs-24: 24px; --fs-28: 28px;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --touch: 44px; --btn: 80px;
+  
+  --bubble-shadow: drop-shadow(var(--shadow-size) var(--shadow-size) 0 var(--shadow));
+}
+html{touch-action:pan-x pan-y}
+body{margin:0;background:var(--bg)}
+.pg{box-sizing:border-box;min-height:100vh;background:var(--bg);color:var(--text);font:var(--fs-15)/1.5 var(--font-ui);padding:20px var(--sp-4) 40px}
+.pg{--ok:#7cff6b}   /* this page's own "checked" green (a passed row, the hardware box); the phone page has none */
+.pg *{box-sizing:border-box}
+.pg .in{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.pg a{color:var(--accent)}
+.pg code{font-size:var(--fs-13);background:var(--bg);padding:1px 5px;border-radius:4px}
+.pg .hd{font-size:var(--fs-13);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pg .bub{background:var(--surface);border:var(--stroke) solid var(--line);border-radius:20px;filter:var(--bubble-shadow);overflow:hidden}
+.pg .ttl{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-4);border-bottom:var(--stroke) solid var(--line)}
+.pg .ttl b{flex:1;font-size:var(--fs-18)}
+.pg .ttl .n{font-size:var(--fs-13);color:var(--muted)}
+.pg .ttl.col{display:block;padding:14px var(--sp-4)}
+.pg .ttl.col b{display:block}
+.pg .ttl.col span{font-size:var(--fs-13);color:var(--muted)}
+.pg .back{display:flex;align-items:center;justify-content:center;width:var(--touch);height:var(--touch);margin:-8px 0 -8px -12px;color:var(--text);text-decoration:none;font-size:22px}
+.pg .meta{padding:var(--sp-3) var(--sp-4);font-size:var(--fs-14);color:var(--muted)}
+.pg .meta+.meta{padding-top:0}
+.pg .sic{flex:none;color:var(--accent)}
+.pg .sic.warn{color:var(--danger)}
+.pg .sic.ok{color:var(--ok)}
+.pg .sec{display:flex;flex-direction:column;gap:var(--sp-3)}
+.pg .sh{display:flex;align-items:center;gap:var(--sp-3);padding:0 var(--sp-1)}
+.pg .sh b{flex:1;font-size:var(--fs-18)}
+.pg .sh .n{font-size:var(--fs-13);color:var(--muted)}
+.pg .list{display:flex;flex-direction:column;gap:10px}
+.pg .it{padding:14px;background:var(--raised);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-14);overflow-wrap:anywhere}
+.pg .it b{display:block;margin-bottom:2px;font-size:var(--fs-15)}
+.pg .ref,.pg .chip{display:inline-block;padding:0 var(--sp-2);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-12);color:var(--muted)}
+.pg .ref{margin:6px 6px 0 0}
+.pg .chip{border-color:var(--accent);font-weight:600;color:var(--accent)}
+.pg .hw{padding:14px;border:var(--stroke) solid var(--ok);border-radius:var(--radius);font-size:var(--fs-14);background:var(--raised)}
+.pg .nav{display:flex;justify-content:space-between;gap:var(--sp-4);padding:0 var(--sp-1);font-size:var(--fs-14)}
+.pg .tlx{position:relative;padding:6px 0 var(--sp-2)}
+.pg .tlx:before{content:"";position:absolute;left:27px;top:30px;bottom:34px;width:var(--stroke);background:var(--line)}
+.pg .grp{padding:var(--sp-3) var(--sp-4) 2px 52px;font-size:var(--fs-12);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pg .row{position:relative;display:flex;align-items:center;gap:var(--sp-3);min-height:64px;padding:var(--sp-3) var(--sp-4) var(--sp-3) 52px;color:var(--text);text-decoration:none}
+.pg .row:before{content:"";position:absolute;left:22px;top:23px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:var(--stroke) solid var(--accent)}
+.pg .row.now:before{background:var(--accent)}
+.pg .row:after{content:"";position:absolute;left:52px;right:var(--sp-4);bottom:0;border-bottom:var(--stroke) solid var(--line)}
+.pg .row.last:after{display:none}
+.pg .tx{flex:1;min-width:0}
+.pg .tx b{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-16)}
+.pg .tx small{display:block;font-size:var(--fs-13);line-height:1.4;color:var(--muted)}
+.pg .op{flex:none;color:var(--muted)}
+.pg .foot{margin:0;font-size:var(--fs-13);color:var(--muted)}
+.pg .tl{position:relative;display:flex;flex-direction:column;gap:10px;padding-left:28px}
+.pg .tl:before{content:"";position:absolute;left:5px;top:12px;bottom:12px;width:var(--stroke);background:var(--line)}
+.pg .c{position:relative;display:flex;align-items:flex-start;gap:10px;padding:var(--sp-3);background:var(--raised);border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-14);overflow-wrap:anywhere}
+.pg .c:before{content:"";position:absolute;left:-28px;top:16px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:var(--stroke) solid var(--accent)}
+.pg .ty{flex:none;width:76px;padding:0 var(--sp-2);text-align:center;border:var(--stroke) solid var(--line);border-radius:var(--radius);font-size:var(--fs-12);color:var(--muted)}
+.pg .ty.fix{border-color:var(--danger);color:var(--danger)}
+.pg p{margin:0}
+</style>
+</head>
+<body>
+<div class="pg"><div class="in">
+<div class="hd">GAMiq</div>
+<div class="bub"><div class="ttl col"><b>GAMiq guide</b></div><div class="meta">What GAMiq is, how to set it up and what to do when something does not work, with pictures of the displays. How to operate during a game is taught by the tutorial inside the phone page (the lock screen, <i>Guide</i>): it points at the controls on the device itself and always fits the version on your units.</div></div>
+<div class="sec"><div class="sh"><b>What you need</b></div><div class="bub"><ul><li>One or more GAMiq units (up to five per game), each with power (USB or the integrated supply).</li><li>A 2.4 GHz WiFi network that the units and your phone can join. A phone hotspot works too.</li><li>A phone or tablet with a browser. No app is needed.</li></ul></div></div>
+<div class="sec"><div class="sh"><b>First start (once per unit)</b></div><div class="bub"><div class="meta"><ol><li>Tap “Set up WiFi”, choose your network and enter the password.</li><li>The unit restarts and joins the WiFi.</li><li>Connect your phone to the same WiFi and scan the QR code on the panel: it opens the controls and pairs the phone. Without a scan, enter the IP address shown there in the browser and then the code under the QR code.</li><li>The guide to the game, the settings and the update is then on the page, under “Start game”.</li><li>Switch on the second unit – it finds the first one automatically.</li></ol></div><img src="img/hotspot_text-en.png" alt="The display in set-up mode: the name of the unit&#x27;s hotspot" title="The display in set-up mode: the name of the unit&#x27;s hotspot" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"><img src="img/qr_hotspot-en.png" alt="The QR code that joins the phone to the unit&#x27;s hotspot" title="The QR code that joins the phone to the unit&#x27;s hotspot" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"><img src="img/connected-en.png" alt="The unit has joined the WiFi" title="The unit has joined the WiFi" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"><div class="meta">If the saved network is not available (router still starting), the unit retries it every 5 minutes while no phone is connected to its hotspot.</div></div></div>
+<div class="sec"><div class="sh"><b>Every start</b></div><div class="bub"><div class="meta">Switch the units on. They join the WiFi, find each other and agree on their roles within about ten seconds; nobody has to choose a Master. The Master's panel shows a QR code, the IP address and a six-digit code. Scan the QR code to open the controller and pair the phone; without a scan, type the IP address into the browser and enter the code. The phone and the units have to be on the same WiFi.</div><img src="img/qr_master-en.png" alt="The Master&#x27;s display: QR code, address and code (example values)" title="The Master&#x27;s display: QR code, address and code (example values)" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"></div></div>
+<div class="sec"><div class="sh"><b>An update</b></div><div class="bub"><div class="meta">Every unit fetches its update itself, in its settings on the page. The display shows the progress and then whether it worked.</div><img src="img/update_load-en.png" alt="The update is loading: the ring fills, the progress in percent in the middle" title="The update is loading: the ring fills, the progress in percent in the middle" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"><img src="img/update_done-en.png" alt="The update worked: a green check mark" title="The update worked: a green check mark" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"><img src="img/update_failed-en.png" alt="The update failed: a red cross and the reason. The old version keeps running" title="The update failed: a red cross and the reason. The old version keeps running" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"><img src="img/update_back-en.png" alt="Back on the old version: the update did not pass its trial and the unit returned" title="Back on the old version: the update did not pass its trial and the unit returned" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"></div></div>
+<div class="sec"><div class="sh"><b>When something does not work</b></div><div class="bub"><div class="list"><div class="it"><b>Connection lost</b>If the page says “Connection lost” or the time stands still, the phone cannot reach the system. Check that the phone is on the same WiFi as the units. The game on the panels goes on.</div><div class="it"><b>A unit loses power</b>The game goes on on the other unit, which becomes the Master after about 23 seconds. A paused game is kept, but its QR code covers it until a phone is connected: scan it once, the code belongs to that unit.</div><div class="it"><b>A unit shows its own QR code after an update</b>It runs another MAJOR version and no longer joins the others. Update the other units too, one by one, in their settings.<img src="img/qr_slave-en.png" alt="A unit that joins no system shows its own QR code" title="A unit that joins no system shows its own QR code" loading="lazy" style="width:192px;max-width:45%;height:auto;margin:8px 8px 0 0;border-radius:8px;vertical-align:top"></div><div class="it"><b>Sound</b>The units have no speaker, the signal comes from the phone. Pair a Bluetooth speaker with it, unmute it and tap once on the page after loading. Keep the page in front and set the screen timeout before a game to the longest value or off: a locked phone stays silent.</div><div class="it"><b>The QR code does not scan</b>The LED spacing makes it hard for some cameras at close range. Hold the phone one to three metres away, or type the address shown below the code and enter the code.</div><div class="it"><b>Who can operate</b>Anyone on the same WiFi can watch, only paired phones can operate. Pairing keeps bystanders from pressing buttons; it is no protection against someone who can read the network traffic: use a network you trust or a hotspot of your own.</div></div></div></div>
+</div></div>
+</body>
+</html>
